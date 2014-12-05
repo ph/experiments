@@ -4,7 +4,7 @@ require 'benchmark'
 time = Time.now.iso8601(3)
 #  => "2014-05-26T23:26:08.628-07:00"
 
-Benchmark.bm do |x|
+Benchmark.bmbm do |x|
   x.report('parse') { 100_000.times { Time.parse(time).gmtime } } 
   x.report('iso8601') { 100_000.times { Time.iso8601(time).gmtime } }
 end
